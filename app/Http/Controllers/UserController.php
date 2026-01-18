@@ -109,4 +109,16 @@ class UserController extends Controller
 
         return $request->validate($rules, $messages);
     }
+
+    public function testing(){
+        $users = User::
+        select(
+            'id as value',
+            'name as text',
+        )
+        ->get();
+
+        return $users;
+    
+    }
 }
